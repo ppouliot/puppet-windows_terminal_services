@@ -25,8 +25,11 @@
 class windows_terminal_services($remote_access){
   validate_re($remote_access, '^(enable|disable)$', 'valid values for ensure are \'enable\' or \'disable\'')
   if $remote_access == 'enable' {
+    notice('Terminal Server Remote Access Enabled')
     $ts_deny_connections = '0'
-  } else {
+  }
+  if $remote_access == 'disable' {
+    notice('Terminal Server Remote Access Disabled')
     $ts_deny_connections = '1' 
   }
   if $kernel == 'windows' {
