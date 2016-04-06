@@ -24,7 +24,7 @@
 # Copyright 2015 Peter J. Pouliot <peter@pouliot.net>, unless otherwise noted.
 class windows_terminal_services($remote_access){
   validate_re($remote_access, '^(enable|disable)$', 'valid values for ensure are \'enable\' or \'disable\'')
-  if $remote_access = 'enable' {
+  if $remote_access == 'enable' {
     $ts_deny_connections = '0'
   } else {
     $ts_deny_connections = '1' 
