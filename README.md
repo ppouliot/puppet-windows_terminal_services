@@ -10,7 +10,7 @@
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+6. [Contributors - Contributors to the module](#contributors)
 
 ## Overview
 This puppet module is used for enabling and disabling Terminal Services on Windows Platforms for Remote Access.
@@ -24,7 +24,7 @@ This module works by modifying the necessary Windows Registry keys for Terminal 
 * Registry Key 'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server'
 * Registry Key Value: 'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\fDenyTSConnection'
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements 
 This module requires the puppetlabs-registry module.
 
 ## Usage
@@ -50,17 +50,12 @@ To disable remote access via Windows Terminal Services on a Windows host.
 * Windows 10
 * Windows Server 2016 Plaforms
 
-## Development
-
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
 ## Contributors
 * Peter Pouliot <peter@pouliot.net>
 
 ## Copyright and License
 
-Copyright (C) 2015 Peter J. Pouliot
+Copyright (C) 2016 Peter J. Pouliot
 
 Peter Pouliot can be contacted at: peter@pouliot.net
 
