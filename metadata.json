@@ -1,0 +1,15 @@
+{
+  "name": "puppet-windows_terminal_services",
+  "version": "0.0.1",
+  "author": "Peter J. Pouliot <peter@pouliot.net>",
+  "summary": "A puppet module to configure Termial Services Access to Windows hosts.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/ppouliot/puppet-windows_terminal_services",
+  "project_page": "https://github.com/ppouliot/puppet-windows_terminal_services",
+  "issues_url": "https://github.com/ppouliot/puppet-windows_terminal_services/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-registry","version_requirement":">= 1.0.0"}
+  ]
+}
+
