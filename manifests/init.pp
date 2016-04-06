@@ -23,16 +23,12 @@
 #
 # Copyright 2015 Peter J. Pouliot <peter@pouliot.net>, unless otherwise noted.
 
-class windows_terminal_services ( $remote_access ){
-
+class windows_terminal_services ($remote_access){
   validate_re($remote_access, '^(enable|disable)$', 'valid values for ensure are \'enable\' or \'disable\'')
-
   $ts_deny_connections = $remote_access ? {
     (/enable/)  => '0',
     (/disable/) => '1',
-    default     => undef,
   }
-
   if $kernel == 'windows' {
     registry_key {'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server':
       ensure => present,
