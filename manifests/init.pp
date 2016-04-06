@@ -27,7 +27,7 @@ class windows_terminal_services ( $remote_access ){
 
   validate_re($remote_access, '^(enable|disable)$', 'valid values for ensure are \'enable\' or \'disable\'')
 
-  $ts_deny_connections =  $remote_access ? {
+  $ts_deny_connections = $remote_access ? {
     (/enable/)  => '0',
     (/disable/) => '1',
     default     => undef,
