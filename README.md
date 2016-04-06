@@ -7,65 +7,48 @@
 3. [Setup - The basics of getting started with windows_terminal_services](#setup)
     * [What windows_terminal_services affects](#what-windows_terminal_services-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with windows_terminal_services](#beginning-with-windows_terminal_services)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
 ## Overview
-
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+This puppet module is used for enabling and disabling Terminal Services on Windows Platforms for Remote Access.
 
 ## Module Description
+This module works by modifying the necessary Windows Registry keys for Terminal Services.
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
-
-## Setup
 
 ### What windows_terminal_services affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* Registry Key 'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server'
+* Registry Key Value: 'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\fDenyTSConnection'
 
 ### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with windows_terminal_services
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+This module requires the puppetlabs-registry module.
 
 ## Usage
+To enable remote access via Windows Terminal Services on a Windows host.
+  ```
+  class{'windows_terminal_services':
+    remote_access => enable,
+  }
+  ```
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
-
+To disable remote access via Windows Terminal Services on a Windows host.
+  ```
+  class{'windows_terminal_services':
+    remote_access => disable,
+  }
+  ```
 ## Reference
-
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+* init.pp
 
 ## Limitations
-
-This is where you list OS compatibility, version compatibility, etc.
+* Windows 8.1
+* Windows Server 2012r2 Plaforms
+* Windows 10
+* Windows Server 2016 Plaforms
 
 ## Development
 
