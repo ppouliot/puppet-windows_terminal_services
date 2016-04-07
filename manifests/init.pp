@@ -30,9 +30,9 @@ class windows_terminal_services($remote_access){
   }
   if $remote_access == 'disable' {
     notice('Terminal Server Remote Access Disabled')
-    $ts_deny_connections = '1' 
+    $ts_deny_connections = '1'
   }
-  if $kernel == 'windows' {
+  if $::kernel == 'windows' {
     registry_key {'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server':
       ensure => present,
     } notice("Puppet module ${module_name} is ensuring Registry key HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server is present")
